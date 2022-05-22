@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<h1 class="text-center">Search Ships</h1>
+
+		<div>
+			<!-- source list -->
+			<div class="dropdown text-center">
+				<button class="btn btn-secondary dropdown-toggle" type="button"
+					id="dropdownMenuButton1" data-bs-toggle="dropdown"
+					aria-expanded="false">Select Source</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Mumbai</a></li>
+					<li><a class="dropdown-item" href="#">Goa</a></li>
+					<li><a class="dropdown-item" href="#">Kochi</a></li>
+				</ul>
+			</div>
+			
+			
+			<!-- destination list -->
+			<div class="dropdown child float-left-right">
+				<button class="btn btn-secondary dropdown-toggle" type="button"
+					id="dropdownMenuButton1" data-bs-toggle="dropdown"
+					aria-expanded="false">Select Destination</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<li><a class="dropdown-item" href="#">Mumbai</a></li>
+					<li><a class="dropdown-item" href="#">Goa</a></li>
+					<li><a class="dropdown-item" href="#">Kochi</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

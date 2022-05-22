@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container" id="my_card">
+			<div class="row">
+			
+				<div class="col-md-4 offset-md-4">
+				
+					<div th:if="${session.message}"
+						 class="alert" th:classappend="${session.message.type}"
+						role="alert">
+						<p th:text="${session.message.content}"></p>
+						<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+					</div>
+
+					<h1 class="text-center">Register Here</h1>
+					
+					<form action="" th:action="@{/do_register}" method="post"
+						th:object="${user}">
+						<!-- first name -->
+						<div class="mb-3">
+							<label for="first_name" class="form-label">First Name</label> 
+							<input
+								type="text" class="form-control" id="first_name" name="fName"
+								aria-describedby="emailHelp" placeholder="Enter First Name"
+								required="required" th:value="${user.fName}">
+						</div>
+						<!-- last name -->
+						<div class="mb-3">
+							<label for="last_name" class="form-label">Last Name</label> <input
+								type="text" class="form-control" id="last_name" name="lName"
+								th:value="${user.lName}" aria-describedby="emailHelp"
+								placeholder="Enter Last Name" required="required">
+						</div>
+						<!-- email -->
+						<div class="mb-3">
+							<label for="email" class="form-label">Email</label> <input
+								type="text" class="form-control" id="email" name="email"
+								aria-describedby="emailHelp" placeholder="Enter Email"
+								required="required" th:value="${user.email}">
+						</div>
+						<!-- age -->
+						<div class="mb-3">
+							<label for="age" class="form-label">Age</label> <input
+								placeholder="Enter Age" type="number" class="form-control"
+								name="age" th:value="${user.age}" id="age"
+								aria-describedby="emailHelp" required="required">
+						</div>
+						<!-- gender -->
+						<div class="mb-3">
+							<label for="gender" class="form-label st-gender">Gender</label> <input
+								class="form-check-input" type="radio" th:value="${user.gender}"
+								name="gender" id="flexRadioDefault1" checked> <label
+								class="form-check-label" for="flexRadioDefault1"> Male </label>
+							<input class="form-check-input" type="radio"
+								th:value="${user.gender}" name="gender" id="flexRadioDefault2">
+							<label class="form-check-label" for="flexRadioDefault2">
+								Female </label>
+						</div>
+						<!-- password -->
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label> <input
+								name="password" type="password" class="form-control"
+								id="password" placeholder="Enter Password"
+								aria-describedby="emailHelp" required="required">
+						</div>
+						<!-- confirm password -->
+						<div class="mb-3">
+							<label for="confirm_password" class="form-label">Confirm
+								Password</label> <input name="confirm_password" type="password"
+								class="form-control" id="confirm_password"
+								placeholder="Enter Password" aria-describedby="emailHelp"
+								required="required">
+						</div>
+						<!-- address -->
+						<div class="form-group">
+							<label for="address" class="form-label">Address</label>
+							<textarea rows="3" class="form-control" id="address"
+								name="address" th:value="${user.address}" required="required"
+								placeholder="Enter Address"></textarea>
+						</div>
+						<!-- phone -->
+						<div class="mb-3">
+							<label for="phone" class="form-label">Phone Number</label> <input
+								name="phoneNumber" type="number" class="form-control" id="phone"
+								th:value="${user.phoneNumber}" placeholder="Enter Phone Number"
+								aria-describedby="emailHelp" required="required">
+						</div>
+
+						<div class="form-group form-check">
+							<input type="checkbox" name="agreement" class="form-check-input"
+								id="agreement"> <label for="agreement">Accept
+								terms and conditions</label>
+						</div>
+						<!-- buttons -->
+						<div class="container text-center">
+							<button type="submit" class="btn bg-primary text-white">Submit</button>
+							<button type="reset" class="btn btn-warning text-white">Reset</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

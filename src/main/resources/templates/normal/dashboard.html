@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<h1 class="text-center">Search Ships</h1>
+
+    <div class="dropdown_submit">
+        <div class="city">
+            Source &nbsp;<select name="City">
+                <option value="Select option">Select Source ....</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Gujrat">Gujrat</option>                
+            </select>
+        </div>
+        &nbsp;&nbsp;
+
+        <div class="state">
+            Destination &nbsp;<select name="state">
+                <option value="Select option">Select Destination ....</option>
+                <option value="Andhra Pradesh">Kochi</option>
+                <option value="Madhya Pradesh">Kerala</option>
+                <option value="Goa">Goa</option>
+            </select>
+
+        </div>
+        &nbsp;&nbsp;
+
+        <input type="submit" value="Search" id="submit_btn">
+    </div>
+
+	</section>
+</body>
+</html>
